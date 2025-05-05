@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Libraries.FFplay
+﻿# Contributing to Soenneker.Libraries.FFplay
 
 We're excited that you're interested in contributing!
 
