@@ -38,7 +38,7 @@ jobs:
         run: dotnet build test/Soenneker.Libraries.FFplay.Tests/Soenneker.Libraries.FFplay.Tests.csproj --configuration Release --no-restore --verbosity minimal
 
       - name: Test
-        run: dotnet test test/Soenneker.Libraries.FFplay.Tests/Soenneker.Libraries.FFplay.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
+        run: dotnet test --project test/Soenneker.Libraries.FFplay.Tests/Soenneker.Libraries.FFplay.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
 
       - name: Pack
         run: dotnet pack src/Soenneker.Libraries.FFplay/Soenneker.Libraries.FFplay.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
