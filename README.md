@@ -5,7 +5,7 @@
 
 # Soenneker.Libraries.FFplay
 
-Simply adds the FFplay (FFmpeg) Windows executable, updated daily (if available).
+The FFplay Windows executable packaged as a .NET content asset.
 
 ## Install
 
@@ -13,11 +13,14 @@ Simply adds the FFplay (FFmpeg) Windows executable, updated daily (if available)
 dotnet add package Soenneker.Libraries.FFplay
 ```
 
-## What it provides
+The package copies the executable beneath the application output directory:
 
-- Simply adds the FFplay (FFmpeg) Windows executable, updated daily (if available).
-- The file is copied to the output directory, and located at the relative path: `Resources\`.
+```text
+Resources/ffplay.exe
+```
 
-## How to use it
+```csharp
+string ffplay = Path.Combine(AppContext.BaseDirectory, "Resources", "ffplay.exe");
+```
 
-After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
+This package supplies the Windows executable but does not start or manage the media player. FFplay opens a native window and requires a usable desktop/audio session; it is generally unsuitable for headless server workloads.
